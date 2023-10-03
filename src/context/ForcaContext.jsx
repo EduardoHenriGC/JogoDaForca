@@ -35,7 +35,7 @@ export const ForcaProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (25 no exemplo)
+    if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (10 no exemplo)
       trocarPalavra();
     } else {
       setEstadoJogo('vitoriaFinal');
@@ -46,7 +46,7 @@ export const ForcaProvider = ({ children }) => {
     if (jogoReiniciado) {
       setJogoReiniciado(false);
       trocarPalavra();
-    } else if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (25 no exemplo)
+    } else if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (10 no exemplo)
       trocarPalavra();
     } else {
       setEstadoJogo('vitoriaFinal');
@@ -57,21 +57,21 @@ export const ForcaProvider = ({ children }) => {
     if (estadoJogo !== 'emAndamento' || tentativasRestantes === 0) {
       return;
     }
-
+  
     const letra = letraDigitada.toLowerCase();
-
-    if (!/^[a-z]$/.test(letra)) {
-      setMensagemErro('Por favor, insira apenas letras.');
+  
+    if (!/^[a-z ]$/.test(letra)) { // Adicione um espaço ao regex
+      setMensagemErro('Por favor, insira apenas letras ou espaços.');
       return;
     }
-
+  
     if (letrasTentadas.includes(letra)) {
       setMensagemErro('Você já tentou essa letra antes.');
       return;
     }
-
+  
     setMensagemErro('');
-
+  
     if (palavraEscolhida.includes(letra)) {
       const novaPalavraExibida = palavraEscolhida
         .split('')
@@ -80,7 +80,7 @@ export const ForcaProvider = ({ children }) => {
         )
         .join('');
       setPalavraExibida(novaPalavraExibida);
-
+  
       if (!novaPalavraExibida.includes('_')) {
         setEstadoJogo('vitoria');
         setMensagemParabenizacao(`Parabéns, você acertou! A palavra era: ${palavraEscolhida}`);
@@ -91,15 +91,16 @@ export const ForcaProvider = ({ children }) => {
       }
     } else {
       setTentativasRestantes(tentativasRestantes - 1);
-
+  
       if (tentativasRestantes === 1) {
         setEstadoJogo('derrota');
       }
     }
-
+  
     setLetrasTentadas([...letrasTentadas, letra]);
     setLetraDigitada('');
   };
+  
 
   const reiniciarJogo = () => {
     setIndicePalavraAtual(0);
@@ -119,7 +120,7 @@ export const ForcaProvider = ({ children }) => {
     estadoJogo,
     reiniciarJogo,
     temaPalavra,
-    pontuacao // Disponibilize a pontuação no contexto
+    pontuacao 
   };
 
   return (

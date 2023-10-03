@@ -4,8 +4,7 @@ function removerAcentos(palavra) {
       .replace(/[\u0300-\u036f]/g, '');
   }
 
-const palavrasComTema = [
-
+  const palavrasComTema = [
     { palavra: "computador", tema: "Tecnologia" },
     { palavra: "bicicleta", tema: "Transporte" },
     { palavra: "elefante", tema: "Animais" },
@@ -104,7 +103,6 @@ const palavrasComTema = [
     { palavra: "atletismo", tema: "Esportes" },
     { palavra: "cometa Halley", tema: "Astronomia" },
     { palavra: "jardim", tema: "Lazer" },
-   
   ].map(item => ({
     palavra: removerAcentos(item.palavra.toLowerCase()), // Converta para minúsculas e remova acentos
     tema: item.tema

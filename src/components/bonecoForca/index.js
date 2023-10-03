@@ -17,7 +17,7 @@ const BonecoForca = ({ tentativasRestantes, estadoJogo  }) => {
   const partesVisiveis = partesCorpo.slice(0, tentativasRestantes);
 
   if (estadoJogo === 'derrota') {
-    return <p>Você perdeu.. HAHAHAHAHAH MELHORE</p>;
+    return <p className={styles.textDerrota}>Você perdeu.. HAHAHAHAHAH MELHORE</p>;
   }
 
   return (

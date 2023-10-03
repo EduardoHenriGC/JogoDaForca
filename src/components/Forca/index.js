@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import BonecoForca from '../bonecoForca/index';
 import { useForca } from '@/context/ForcaContext';
 import styles from "@/styles/index/index.module.css"
@@ -7,7 +8,7 @@ import styles from "@/styles/index/index.module.css"
 
 const Forca = () => {
   const {  
-    palavraEscolhida,
+    
     palavraExibida,
     tentativasRestantes,
     letraDigitada,
@@ -28,6 +29,7 @@ const Forca = () => {
   
   return (
     <div className={styles.container}>
+      <Link className={styles.btnClose} href="/">X</Link>
       <h1>Jogo da Forca</h1>
       <h3>TEMA: {temaPalavra}</h3>
       <h3>pontuacao: {pontuacao}</h3>
