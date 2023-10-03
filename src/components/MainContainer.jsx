@@ -1,4 +1,3 @@
-import Footer from "./footer/footer";
 import styles from "../styles/MainContainer/MainContainer.module.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
      
       <div className={styles.mainContainer}>{children}</div>
 
-      <Footer/>
+      
       <ToastContainer 
       />
       </>
