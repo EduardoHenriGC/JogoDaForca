@@ -19,7 +19,8 @@ const Forca = () => {
     estadoJogo,
     reiniciarJogo,
     temaPalavra,
-    pontuacao
+    pontuacao,
+    letrasTentadas
     
    
     
@@ -31,9 +32,9 @@ const Forca = () => {
     <div className={styles.container}>
       <Link className={styles.btnClose} href="/">X</Link>
       <h1>Jogo da Forca</h1>
-      <h3>TEMA: {temaPalavra}</h3>
+      <h3 className={estadoJogo == "derrota" ? styles.doff : ""}>TEMA: {temaPalavra}</h3>
       <h3>pontuacao: {pontuacao}</h3>
-      
+      <p className={estadoJogo == "derrota" ? styles.doff : styles.letrasTentadas}>letras tentadas: <span>{letrasTentadas}</span></p>
       <BonecoForca tentativasRestantes={tentativasRestantes} estadoJogo={estadoJogo} />
       {mensagemParabenizacao && <p>{mensagemParabenizacao}</p>}
       {estadoJogo === 'emAndamento' && !mensagemParabenizacao && (

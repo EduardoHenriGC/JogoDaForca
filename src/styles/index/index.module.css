@@ -51,6 +51,17 @@
     
 }
 
+.letrasTentadas span{
+    color: RED;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 18px;
+}
+
+.doff{
+    display: none;
+}
 .btnMain{
 
     

@@ -5,19 +5,20 @@ const ForcaContext = createContext();
 
 export const ForcaProvider = ({ children }) => {
   const maxTentativas = 5;
-  const [pontuacao, setPontuacao] = useState(0); // Adicione a pontuação aqui
-  
+  const [pontuacao, setPontuacao] = useState(0); 
   const [palavraEscolhida, setPalavraEscolhida] = useState('');
   const [palavraExibida, setPalavraExibida] = useState('');
-  const [tentativasRestantes, setTentativasRestantes] = useState(maxTentativas);
+  const [temaPalavra, setTemaPalavra] = useState('');
+  const [indicePalavraAtual, setIndicePalavraAtual] = useState(0);
   const [letraDigitada, setLetraDigitada] = useState('');
-  const [estadoJogo, setEstadoJogo] = useState('emAndamento');
   const [letrasTentadas, setLetrasTentadas] = useState([]);
+  const [tentativasRestantes, setTentativasRestantes] = useState(maxTentativas);
+  const [estadoJogo, setEstadoJogo] = useState('emAndamento');
+  const [jogoReiniciado, setJogoReiniciado] = useState(false);
   const [mensagemErro, setMensagemErro] = useState('');
   const [mensagemParabenizacao, setMensagemParabenizacao] = useState('');
-  const [indicePalavraAtual, setIndicePalavraAtual] = useState(0);
-  const [jogoReiniciado, setJogoReiniciado] = useState(false);
-  const [temaPalavra, setTemaPalavra] = useState('');
+ 
+  
 
   
 
@@ -35,18 +36,19 @@ export const ForcaProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (10 no exemplo)
+    if (indicePalavraAtual < 15) { // Defina o número desejado de palavras 
       trocarPalavra();
     } else {
       setEstadoJogo('vitoriaFinal');
     }
   }, [indicePalavraAtual]);
 
+
   useEffect(() => {
     if (jogoReiniciado) {
       setJogoReiniciado(false);
       trocarPalavra();
-    } else if (indicePalavraAtual < 10) { // Defina o número desejado de palavras (10 no exemplo)
+    } else if (indicePalavraAtual < 15) { // Defina o número desejado de palavras 
       trocarPalavra();
     } else {
       setEstadoJogo('vitoriaFinal');
@@ -113,6 +115,7 @@ export const ForcaProvider = ({ children }) => {
     palavraExibida,
     tentativasRestantes,
     letraDigitada,
+    letrasTentadas,
     setLetraDigitada,
     verificarLetra,
     mensagemErro,
