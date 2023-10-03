@@ -1,0 +1,64 @@
+/* Forca.module.css */
+
+.forca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.gibbet {
+  width: 10px;
+  height: 200px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilize as partes do corpo do boneco com classes de estilo do módulo */
+.parte {
+  width: 20px;
+  height: 100px;
+  background-color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.cabeca {
+  width: 60px;
+  height: 60px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.braco {
+  width: 20px;
+  height: 80px;
+  background-color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.braco.esquerdo {
+  transform: translateX(-20px); /* Move o braço esquerdo para a esquerda */
+}
+
+.braco.direito {
+  transform: translateX(20px); /* Move o braço direito para a direita */
+}
+
+.corpo {
+  width: 20px;
+  height: 120px;
+  background-color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.perna {
+  width: 20px;
+  height: 100px;
+  background-color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+
