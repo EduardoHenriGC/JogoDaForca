@@ -63,11 +63,11 @@
 }
 
 
-.textDerrota{
 
-font-weight: bold;
+@media(max-width:281px){
 
-  
-  
 
+  .gibbet{
+    height: 130px;
+  }
 }

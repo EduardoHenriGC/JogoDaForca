@@ -104,3 +104,37 @@
         text-align: left;
     }
  }
+
+
+
+
+@media(max-width:376px){
+
+  .container span{
+    align-items: center;
+    font-size: 30px;
+   
+    
+}
+.container img{
+  width: 35px;
+}
+
+
+}
+
+@media(max-width:281px){
+
+
+  .container span{
+      align-items: center;
+      font-size: 25px;
+     
+      
+  }
+  .container img{
+    width: 25px;
+  }
+
+  
+}

@@ -17,10 +17,12 @@ const Forca = () => {
     mensagemErro,
     mensagemParabenizacao,
     estadoJogo,
+    setEstadoJogo,
     reiniciarJogo,
     temaPalavra,
     pontuacao,
-    letrasTentadas
+    letrasTentadas,
+
     
    
     
@@ -30,7 +32,7 @@ const Forca = () => {
   
   return (
     <div className={styles.container}>
-      <Link className={styles.btnClose} href="/">X</Link>
+      <Link className={styles.btnClose} href="/" onClick={()=> reiniciarJogo()}>X</Link>
       <h1>Jogo da Forca</h1>
       <h3 className={estadoJogo == "derrota" ? styles.doff : ""}>TEMA: {temaPalavra}</h3>
       <h3>pontuacao: {pontuacao}</h3>
@@ -59,8 +61,8 @@ const Forca = () => {
 )}
 
       {estadoJogo === 'derrota' && (
-        <div>
-          
+        <div className={styles.derrotaContent}>
+          <p className={styles.textDerrota}>Você perdeu.. HAHAHAH <span>ponha se no seu lugar!!</span></p>
           <button className={styles.btnJogarNovamente} onClick={reiniciarJogo}>Tentar novamente</button>
         </div>
       )}

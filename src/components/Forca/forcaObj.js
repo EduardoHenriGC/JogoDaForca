@@ -57,7 +57,7 @@ function removerAcentos(palavra) {
     { palavra: "cinema", tema: "Entretenimento" },
     { palavra: "helicóptero", tema: "Transporte" },
     { palavra: "formiga", tema: "Animais" },
-    { palavra: "história em quadrinhos", tema: "Arte" },
+    
     { palavra: "macarrão", tema: "Comida" },
     { palavra: "futebol americano", tema: "Esportes" },
     { palavra: "lua cheia", tema: "Astronomia" },
@@ -75,7 +75,7 @@ function removerAcentos(palavra) {
     { palavra: "frutas", tema: "Comida" },
     { palavra: "natação", tema: "Esportes" },
     { palavra: "nebulosa", tema: "Astronomia" },
-    { palavra: "parque de diversões", tema: "Lazer" },
+    
     { palavra: "gato", tema: "Animais" },
     { palavra: "matemática", tema: "Educação" },
     { palavra: "pintura", tema: "Arte" },
@@ -94,7 +94,7 @@ function removerAcentos(palavra) {
     { palavra: "escultura", tema: "Arte" },
     { palavra: "hambúrguer", tema: "Comida" },
     { palavra: "ginástica", tema: "Esportes" },
-    { palavra: "estrela do mar", tema: "Astronomia" },
+    
     { palavra: "praça", tema: "Lazer" },
     { palavra: "golfinho", tema: "Animais" },
     { palavra: "história antiga", tema: "Educação" },

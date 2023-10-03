@@ -46,8 +46,15 @@
 .palavraExibida{
     
     letter-spacing: 10px;
-    font-size: 20px;
+    font-size: 14px;
     text-transform: uppercase;
+    display: flex;
+   
+    
+    
+    
+    
+    
     
 }
 
@@ -86,13 +93,18 @@
         text-decoration: none;
       }
      
-    
+    .derrotaContent{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 
          
 .btnJogarNovamente{
     background-image: linear-gradient(to right, #870000 0%, #190A05  51%, #870000  100%);
     margin: 10px;
-    padding: 15px 45px;
+    padding: 15px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -102,6 +114,7 @@
     border-radius: 10px;
     display: block;
     cursor: pointer;
+    width: 200px;
   }
 
   .btnJogarNovamente:hover {
@@ -109,4 +122,109 @@
     color: #fff;
     text-decoration: none;
   }
+
+
  
+  @media(max-width:1281px){
+
+    .container{
+
+        gap: 0;
+    }
+
+    .container h3{
+        margin: 15px;
+    }
+
+    .input{
+
+        padding: 7px;
+    }
+    .container h1{
+
+        font-size: 18px;
+        
+            
+        position: absolute;
+        top: 25px;
+    }
+  }
+
+
+  @media(max-width:540px){
+
+    .container{
+        gap: 0px;
+    }
+        
+      }
+    
+    
+      @media(max-width:412px){
+    .input{
+        padding: 6px;
+    }
+    
+      }
+    
+ 
+
+  @media(max-width:394px){
+
+    .input{
+        width: 120px;
+    }
+  }
+
+
+ 
+
+ 
+  @media(max-width:281px){
+
+
+    .container{
+
+        height: 100vh;
+    }
+
+    .container h1{
+
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .container h3{
+        margin-top: 15px;
+        
+    }
+    .input{
+        padding: 5px;
+        
+    }
+.letrasTentadas span{
+    font-size: 14px;
+}
+    .btnClose{
+
+        padding: 9px;
+        right: 12px;
+    }
+
+    .btnMain{
+        padding: 10px;
+        font-size: 12px;
+    }
+    .textDerrota{
+
+        font-weight: bold;
+        text-align: center;
+        
+          
+          
+        
+        }
+        .textDerrota span{display: block;
+        margin-top: 3px;}
+        
+  }

@@ -21,7 +21,7 @@ export default function PaginaInicial(){
                 <p>cada palavra certa vale 100 pontos.</p>
                 <p>não há acentos nas palavras apenas letras e espaços.</p>
                 <p>a tecla space conta como uma letra usado em palavras compostas.</p>
-                <p>são 15 palavras aleatorias.</p>
+                <p>são 15 palavras aleatórias.</p>
               </div>
             </div>
 
