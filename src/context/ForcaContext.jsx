@@ -20,7 +20,7 @@ export const ForcaProvider = ({ children }) => {
   const [checkMsg, setCheckMsg] = useState(false);
 
   useEffect(() => {
-    if (mensagemParabenizacao === `Parabéns, você acertou!! A palavra era: ${palavraEscolhida}`) {
+    if (mensagemParabenizacao === `A palavra era: ${palavraEscolhida.toUpperCase()}`) {
       setCheckMsg(true);
     } else {
       setCheckMsg(false);
@@ -95,12 +95,12 @@ export const ForcaProvider = ({ children }) => {
 
       if (!novaPalavraExibida.includes('_')) {
         setEstadoJogo('vitoria');
-        setMensagemParabenizacao(`Parabéns, você acertou!! A palavra era: ${palavraEscolhida}`);
+        setMensagemParabenizacao(`A palavra era: ${palavraEscolhida.toUpperCase()}`);
 
         setPontuacao(pontuacao + 100); // Adicione 100 pontos à pontuação
         setTimeout(() => {
           setIndicePalavraAtual(indicePalavraAtual + 1);
-        }, 3000);
+        }, 4000);
       }
     } else {
       setTentativasRestantes(tentativasRestantes - 1);
@@ -109,11 +109,9 @@ export const ForcaProvider = ({ children }) => {
         setEstadoJogo('derrota');
       }
     }
-
     setLetrasTentadas([...letrasTentadas, letra]);
     setLetraDigitada('');
   };
-
 
   const reiniciarJogo = () => {
     setIndicePalavraAtual(0);
