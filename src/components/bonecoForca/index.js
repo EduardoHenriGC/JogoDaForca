@@ -1,33 +1,28 @@
-// BonecoForca.js
 import React from 'react';
 import styles from "@/styles/boneco/bonecoForca.module.css"
+import { PartesCorpo } from '../GetParteDoCorpo/index';
+import { useForca } from '@/context/ForcaContext';
 
-const BonecoForca = ({ tentativasRestantes, estadoJogo  }) => {
-  const partesCorpo = [
-    'cabeca',
-    'corpo',
-    'braco esquerdo',
-    'braco direito',
-    
-    'perna esquerda',
-    'perna direita',
-    
-  ];
+const BonecoForca = () => {
 
-  const partesVisiveis = partesCorpo.slice(0, tentativasRestantes);
+  const { estadoJogo, tentativasRestantes, checkMsg } = useForca();
+  const partesVisiveis = PartesCorpo.slice(0, tentativasRestantes);
 
   if (estadoJogo === 'derrota') {
-    return ;
+    return;
   }
 
   return (
     <div className={styles.forca}>
-      <div className={styles.gibbet}>
-        {partesVisiveis.map((parte, index) => (
-          <div className={`${styles.parte} ${styles[parte]}`} key={index}></div>
-        ))}
+      <div className={checkMsg ? styles.doff : styles.gibbet}>
+
+        {
+          partesVisiveis.map((parte, index) => (
+            <div className={`${styles.parte} ${styles[parte]}`} key={index}></div>
+          ))
+        }
       </div>
-    </div>
+    </div >
   );
 };
 

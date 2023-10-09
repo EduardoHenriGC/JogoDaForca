@@ -1,0 +1,176 @@
+.content {
+    margin-top: 30px;
+}
+
+.content p {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.input {
+    padding: 6px;
+}
+
+.inputContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btnClose {
+    color: red;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 16px;
+    background-color: #001510;
+    border-radius: 33%;
+    padding: 12px;
+}
+
+.palavraExibida {
+    letter-spacing: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.btnMain {
+    background-image: linear-gradient(to right, #00bf8f 0%, #001510 51%, #00bf8f 100%);
+    margin: 10px;
+    padding: 10px 12px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnMain:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+@media(max-width:1000px) and (max-height:376px) {
+
+    .content p {
+        font-size: 0.8rem;
+    }
+
+    .content p span {
+
+        font-size: 0.7rem;
+        text-transform: lowercase;
+    }
+
+    .inputContent {
+
+
+        padding: 0;
+    }
+}
+
+@media(max-width:915px) and (max-height:412px) {
+    .inputContent {
+        padding-top: 0px;
+
+
+
+    }
+
+    .input {
+        padding: 4px;
+    }
+}
+
+@media(max-width:1281px) {
+    .inputContent {
+        padding-top: 30px;
+    }
+}
+
+@media(max-width:1200px) {
+    .inputContent {
+        padding-top: 20px;
+    }
+}
+
+@media(max-width:821px) {
+    .inputContent {
+        padding-top: 30px;
+    }
+}
+
+
+
+
+
+@media(max-width:540px) {
+
+    .container {
+        gap: 0px;
+    }
+
+    .palavraExibida {
+
+        letter-spacing: 7px;
+        font-size: 12px;
+        text-transform: uppercase;
+        display: flex;
+    }
+
+}
+
+@media(max-width:415px) {
+    .input {
+        padding: 5px;
+    }
+
+}
+
+@media(max-width:394px) {
+
+    .input {
+        width: 120px;
+    }
+
+    .palavraExibida {
+
+        letter-spacing: 5px;
+        font-size: 10px;
+        text-transform: uppercase;
+        display: flex;
+    }
+}
+
+
+
+
+
+@media(max-width:281px) {
+    .input {
+        padding: 4px;
+
+    }
+
+    .btnClose {
+
+        padding: 9px;
+        right: 12px;
+    }
+
+    .btnMain {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+
+
+}

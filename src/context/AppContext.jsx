@@ -1,22 +1,10 @@
 import { ForcaProvider } from "./ForcaContext";
 
 
-export const AppProvider = ({children,session}) => {
-
-
-
-    return (
-    
-      <ForcaProvider>
-      
-    
-        
-  {children}
-
-
-
-  </ForcaProvider>
-    
-    
-    )
+export const AppProvider = ({ children }) => {
+  return (
+    <ForcaProvider>
+      {children}
+    </ForcaProvider>
+  )
 }

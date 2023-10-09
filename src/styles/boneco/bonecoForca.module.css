@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  
+
 }
 
 .gibbet {
@@ -41,11 +41,13 @@
 }
 
 .braco.esquerdo {
-  transform: translateX(-20px); /* Move o braço esquerdo para a esquerda */
+  transform: translateX(-20px);
+  /* Move o braço esquerdo para a esquerda */
 }
 
 .braco.direito {
-  transform: translateX(20px); /* Move o braço direito para a direita */
+  transform: translateX(20px);
+  /* Move o braço direito para a direita */
 }
 
 .corpo {
@@ -62,12 +64,35 @@
   margin-bottom: 20px;
 }
 
+.doff {
+
+  display: none;
+}
+
+@media(max-width:281px) {
 
 
-@media(max-width:281px){
-
-
-  .gibbet{
+  .gibbet {
     height: 130px;
+  }
+}
+
+
+@media(max-width:1000px) and (max-height:506px) {
+
+
+  .gibbet {
+    height: 130px;
+  }
+
+
+}
+
+@media(max-width:654px) and (max-height:281px) {
+
+  .gibbet {
+
+    height: 150px;
+    margin-top: 80px;
   }
 }

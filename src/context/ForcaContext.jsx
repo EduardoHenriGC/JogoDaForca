@@ -5,7 +5,7 @@ const ForcaContext = createContext();
 
 export const ForcaProvider = ({ children }) => {
   const maxTentativas = 5;
-  const [pontuacao, setPontuacao] = useState(0); 
+  const [pontuacao, setPontuacao] = useState(0);
   const [palavraEscolhida, setPalavraEscolhida] = useState('');
   const [palavraExibida, setPalavraExibida] = useState('');
   const [temaPalavra, setTemaPalavra] = useState('');
@@ -17,23 +17,16 @@ export const ForcaProvider = ({ children }) => {
   const [jogoReiniciado, setJogoReiniciado] = useState(false);
   const [mensagemErro, setMensagemErro] = useState('');
   const [mensagemParabenizacao, setMensagemParabenizacao] = useState('');
- 
-  
+  const [checkMsg, setCheckMsg] = useState(false);
 
-  
+  useEffect(() => {
+    if (mensagemParabenizacao === `Parabéns, você acertou!! A palavra era: ${palavraEscolhida}`) {
+      setCheckMsg(true);
+    } else {
+      setCheckMsg(false);
+    }
+  }, [mensagemParabenizacao]);
 
-  const trocarPalavra = () => {
-    const palavraAleatoriaObj = palavrasComTema[Math.floor(Math.random() * palavrasComTema.length)]; // Escolha aleatoriamente uma palavra
-    setPalavraEscolhida(palavraAleatoriaObj.palavra);
-    setPalavraExibida('_'.repeat(palavraAleatoriaObj.palavra.length));
-    setTemaPalavra(palavraAleatoriaObj.tema);
-    setTentativasRestantes(maxTentativas);
-    setLetraDigitada('');
-    setEstadoJogo('emAndamento');
-    setLetrasTentadas([]);
-    setMensagemErro('');
-    setMensagemParabenizacao('');
-  };
 
   useEffect(() => {
     if (indicePalavraAtual < 15) { // Defina o número desejado de palavras 
@@ -55,25 +48,42 @@ export const ForcaProvider = ({ children }) => {
     }
   }, [indicePalavraAtual, jogoReiniciado]);
 
+
+  const trocarPalavra = () => {
+
+    const palavraAleatoriaObj = palavrasComTema[Math.floor(Math.random() * palavrasComTema.length)]; // Escolha aleatoriamente uma palavra
+    setPalavraEscolhida(palavraAleatoriaObj.palavra);
+    setPalavraExibida('_'.repeat(palavraAleatoriaObj.palavra.length));
+    setTemaPalavra(palavraAleatoriaObj.tema);
+    setTentativasRestantes(maxTentativas);
+    setLetraDigitada('');
+    setEstadoJogo('emAndamento');
+    setLetrasTentadas([]);
+    setMensagemErro('');
+    setMensagemParabenizacao('');
+
+  };
+
+
   const verificarLetra = () => {
     if (estadoJogo !== 'emAndamento' || tentativasRestantes === 0) {
       return;
     }
-  
+
     const letra = letraDigitada.toLowerCase();
-  
+
     if (!/^[a-z ]$/.test(letra)) { // Adicione um espaço ao regex
       setMensagemErro('Por favor, insira apenas letras ou espaços.');
       return;
     }
-  
+
     if (letrasTentadas.includes(letra)) {
       setMensagemErro('Você já tentou essa letra antes.');
       return;
     }
-  
+
     setMensagemErro('');
-  
+
     if (palavraEscolhida.includes(letra)) {
       const novaPalavraExibida = palavraEscolhida
         .split('')
@@ -82,10 +92,11 @@ export const ForcaProvider = ({ children }) => {
         )
         .join('');
       setPalavraExibida(novaPalavraExibida);
-  
+
       if (!novaPalavraExibida.includes('_')) {
         setEstadoJogo('vitoria');
-        setMensagemParabenizacao(`Parabéns, você acertou! A palavra era: ${palavraEscolhida}`);
+        setMensagemParabenizacao(`Parabéns, você acertou!! A palavra era: ${palavraEscolhida}`);
+
         setPontuacao(pontuacao + 100); // Adicione 100 pontos à pontuação
         setTimeout(() => {
           setIndicePalavraAtual(indicePalavraAtual + 1);
@@ -93,16 +104,16 @@ export const ForcaProvider = ({ children }) => {
       }
     } else {
       setTentativasRestantes(tentativasRestantes - 1);
-  
+
       if (tentativasRestantes === 1) {
         setEstadoJogo('derrota');
       }
     }
-  
+
     setLetrasTentadas([...letrasTentadas, letra]);
     setLetraDigitada('');
   };
-  
+
 
   const reiniciarJogo = () => {
     setIndicePalavraAtual(0);
@@ -123,7 +134,8 @@ export const ForcaProvider = ({ children }) => {
     estadoJogo,
     reiniciarJogo,
     temaPalavra,
-    pontuacao 
+    pontuacao,
+    checkMsg
   };
 
   return (
